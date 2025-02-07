@@ -12,7 +12,7 @@
         <div class="profile">
           <div class="icon_wrap" (click)="toggleProfile()">
             <img src="../../../../assets/img/user.png" alt="profile_pic">
-            <span class="name">John Alex</span>
+            <span class="name">{{user.firstName}} {{user.lastName}}</span>
             <i class="fas fa-chevron-down"></i>
           </div>
   
@@ -20,7 +20,7 @@
             <ul class="profile_ul">
         
 
-              <li><a class="logout" href="#"><span class="picon"><i class="fas fa-sign-out-alt"></i></span>Logout</a></li>
+              <li><a class="logout" (click)="logout()"><span class="picon"><i class="fas fa-sign-out-alt"></i></span>Logout</a></li>
             </ul>
           </div>
         </div>

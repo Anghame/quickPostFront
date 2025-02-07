@@ -10,6 +10,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PostsRoutingModule } from './features/posts/posts-routing.module';
 import { PostsModule } from './features/posts/posts.module';
+import { authGuard } from './core/guards/auth.guard';
 
 import {
   HTTP_INTERCEPTORS,
@@ -17,10 +18,7 @@ import {
   HttpClientModule,
 } from '@angular/common/http';
 
-export function createTranslateLoader(http: HttpClient) {
-  const timestamp = new Date().getTime();
-  return new TranslateHttpLoader(http, '../assets/i18n/',  `.json?v=${timestamp}`);
-}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,20 +26,12 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     AppRoutingModule, SharedModule,
-   //  AuthModule ,
+
      HttpClientModule,
      PostsModule,
      LayoutModule,
-     TranslateModule.forRoot({
-       loader: {
-         provide: TranslateLoader,
-         useFactory: createTranslateLoader,
-         deps: [HttpClient],
-       },
-     }),
-     //PostsRoutingModule 
   ],
-  providers: [],
+  providers: [authGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,6 +20,10 @@ export class AuthService {
         if (response.token) {
           localStorage.setItem(this.tokenKey, response.token); 
         }
+        if (response.user) {
+          localStorage.setItem('user', JSON.stringify(response.user))  
+          localStorage.setItem('connected', 'true')
+              }
       })
     );
   }
@@ -39,6 +43,7 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     this.router.navigate(['/auth/login']);
+    localStorage.setItem('connected', 'false')
   }
 
   isAuthenticated(): boolean {

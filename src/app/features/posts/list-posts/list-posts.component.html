@@ -3,7 +3,7 @@
 <div class="tweet-post-container">
     <div class="tweet-header">
       <img
-        src="https://via.placeholder.com/50"
+        src="../../../../assets/img/user.png"
         alt="Profile"
         class="profile-image"
       />
@@ -18,7 +18,7 @@
         >{{ content ? content.length : 0 }}/280</span
       >
       <button
-        (click)="postTweet()"
+        (click)="postPublication()"
         [disabled]="!content || content.length > 280"
       >
         Post
@@ -30,12 +30,17 @@
     <div *ngFor="let post of posts" class="post">
         <div class="post-header">
             <img 
-              [src]="post.author.gender === 'female' ? 'assets/img/female-avatar.png' : 'assets/img/male-avatar.png'" 
-              alt="Profile" 
-              class="profile-image" 
-            />
+            [src]="post.author._id === user._id 
+                    ? 'assets/img/user.png' 
+                    : (post.author.gender === 'female' 
+                        ? 'assets/img/female-avatar.png' 
+                        : 'assets/img/male-avatar.png')"
+            alt="Profile" 
+            class="profile-image" 
+          />
+          
             <div class="user-info">
-              <span class="username">{{ post.author.username }}</span>
+              <span class="username">{{ post.author.firstName }} {{ post.author.lastName }}</span>
               <span class="timestamp">{{ post.createdAt | date: 'short' }}</span>
             </div>
           </div>
@@ -53,9 +58,18 @@
       </div>
       <div class="comments-section">
         <div *ngFor="let comment of post.comments" class="comment">
-          <img src="https://via.placeholder.com/30" alt="Profile" class="comment-profile-image" />
+          <!-- <img src="https://via.placeholder.com/30" alt="Profile" class="comment-profile-image" /> -->
+          <img 
+          [src]="comment.author._id === user._id 
+                  ? 'assets/img/user.png' 
+                  : (comment.author.gender === 'female' 
+                      ? 'assets/img/female-avatar.png' 
+                      : 'assets/img/male-avatar.png')"
+          alt="Profile" 
+          class="profile-image" 
+        />
           <div class="comment-content">
-            <strong>{{ comment.author.authorname }}:</strong> {{ comment.content }}
+            <strong>{{ comment.author.firstName }} {{ comment.author.lastName }}:</strong> {{ comment.text }}
           </div>
         </div>
         <div class="add-comment">

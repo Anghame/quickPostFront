@@ -8,10 +8,19 @@ import { ToasterService } from '../../../../shared/services/toaster.service';
 })
 export class ListPostsComponent {
   content: string = '';
-  authorId='67a53945dada901d71853784'
+  authorId=''
   posts: any[] = []; 
+  user :any = ''
 
-  constructor(private postService: PostService, private toasterService: ToasterService,) {}
+  constructor(private postService: PostService, private toasterService: ToasterService,) {
+   
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+      this.authorId=this.user._id
+    }
+  
+  }
 
   ngOnInit(): void {
     this.loadPosts(); 
@@ -28,7 +37,7 @@ export class ListPostsComponent {
     );
   }
 
-  postTweet(): void {
+  postPublication(): void {
     if (this.content && this.content.length <= 280) {
       this.postService.createPost(this.content, this.authorId).subscribe(
         (response) => {
@@ -43,10 +52,7 @@ export class ListPostsComponent {
 
         }
       );
-    } else {
-      this.toasterService.showToast('Le tweet ne peut pas être vide ou dépasser 280 caractères.', 'error');
-
-    }
+    } 
   }
 
   likePost(postId: string): void {
@@ -65,11 +71,12 @@ export class ListPostsComponent {
     if (commentContent.trim()) {
       this.postService.addComment(postId, commentContent, this.authorId).subscribe(
         (response) => {
-          console.log('Commentaire ajouté avec succès :', response);
+          this.toasterService.showToast('Commentaire ajouté avec succès!', 'success');
           this.loadPosts(); 
         },
         (error) => {
-          console.error('Erreur lors de l\'ajout du commentaire:', error);
+          this.toasterService.showToast('Erreur lors de l\'ajout du commentaire:', 'error');
+
         }
       );
     }

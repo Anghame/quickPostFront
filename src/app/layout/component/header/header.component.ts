@@ -1,3 +1,4 @@
+import { AuthService } from './../../../core/services/auth.service';
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Component({
@@ -6,27 +7,26 @@ import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user :any = ''
+  constructor(private el: ElementRef,private authService :AuthService) {}
 
-  constructor(private el: ElementRef) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+      //this.authorId=this.user._id
+      console.log(this.user,"this.user");
+    }
+  }
 
   toggleProfile(): void {
     const profile = this.el.nativeElement.querySelector('.profile');
     profile.classList.toggle('active');
-    this.closeNotifications();
+   
   }
 
-  toggleNotifications(): void {
-    const notifications = this.el.nativeElement.querySelector('.notifications');
-    notifications.classList.toggle('active');
-    this.closeProfile();
-  }
 
-  showAllNotifications(): void {
-    const popup = this.el.nativeElement.querySelector('.popup');
-    popup.style.display = 'block';
-  }
+
 
   closePopup(): void {
     const popup = this.el.nativeElement.querySelector('.popup');
@@ -37,7 +37,6 @@ export class HeaderComponent implements OnInit {
   onClickOutside(event: Event): void {
     if (!this.el.nativeElement.contains(event.target)) {
       this.closeProfile();
-      this.closeNotifications();
     }
   }
 
@@ -45,9 +44,8 @@ export class HeaderComponent implements OnInit {
     const profile = this.el.nativeElement.querySelector('.profile');
     profile.classList.remove('active');
   }
+logout(){
+  this.authService.logout(); 
+}
 
-  private closeNotifications(): void {
-    const notifications = this.el.nativeElement.querySelector('.notifications');
-    notifications.classList.remove('active');
-  }
 }
