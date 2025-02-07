@@ -1,0 +1,15 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    font-family: "Quicksand", sans-serif;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+  }

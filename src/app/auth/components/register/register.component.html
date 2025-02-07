@@ -1,0 +1,337 @@
+
+
+  <div class="d-flex flex-column flex-lg-row flex-column-fluid split-screen">
+    <div class="col-lg-6 col-sm-12">
+        <div class="bg">
+            <div class="flex-container w-100">
+                <div class="text-center mb-3">
+                    <h2 class="custom-heading">
+                        Quick Post
+                    </h2>
+                    <div class="custom-div">
+                        Partagez vite, restez connecté
+                    </div>
+                </div>
+                <span class="copyright fs-6 text-white px-5 w-md-100 text-center w-100 mt-5">
+                    Copyright &#169; {{ year }}
+                    <span class="text-white">
+                        Réalisé par
+                    </span>
+                    <a class="text-white" target="_blank">
+                       QuickPost
+                    </a>
+                  
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="align-items-center flex-column-fluid flex-center px-7">
+            <div class="page">
+                <div class="text-center mb-8 matop">
+                    <h5 class="title font-weight-bolder text-dark fs-4 font-size-h1-lg">
+                        Crée un compte sur
+                        <span class="font-weight-bolder fs-3" style="color: #6356e5">Quick Post</span>
+                    </h5>
+                    <div class="title separator separator-content mt-8 mb-18"></div>
+                </div>
+                <form class="form fotop" [formGroup]="registerForm" novalidate="novalidate" (ngSubmit)="submit()">
+                    <!-- Email -->
+                    <div class="fv-row mb-8">
+                        <div class="form-group rounded">
+                            <label for="email" class="form-label fs-6 fw-bolder text-dark">Adresse e-mail</label>
+                            <input
+                                id="emailInput"
+                                class="form-control"
+                                type="email"
+                                name="email"
+                                formControlName="email"
+                                autocomplete="off"
+                                [ngClass]="{
+                                    'is-invalid': registerForm.controls['email'].invalid &&
+                                                registerForm.controls['email'].dirty &&
+                                                registerForm.controls['email'].touched,
+                                    'is-valid': registerForm.controls['email'].valid
+                                }"
+                                [ngStyle]="{
+                                    'border-color': isControlValid('email') && isControlTouched('email')
+                                                  ? '#6356e5'
+                                                  : isControlInvalid('email')
+                                                  ? 'red'
+                                                  : ''
+                                }"
+                            />
+                            <div *ngIf="registerForm.controls['email']?.errors?.['email']" class="form-text text-danger text-warning" style="font-weight: bold">
+                                L'adresse e-mail doit être une adresse valide
+                            </div>
+                            <div *ngIf="registerForm.controls['email']?.errors?.['required'] && registerForm.controls['email'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                Adresse e-mail est requis
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- First Name et Last Name sur la même ligne -->
+                    <div class="row mb-8">
+                        <div class="col-md-6">
+                            <div class="form-group rounded">
+                                <label for="firstName" class="form-label fs-6 fw-bolder text-dark">Prénom</label>
+                                <input
+                                    id="firstNameInput"
+                                    class="form-control"
+                                    type="text"
+                                    name="firstName"
+                                    formControlName="firstName"
+                                    autocomplete="off"
+                                    [ngClass]="{
+                                        'is-invalid': registerForm.controls['firstName'].invalid &&
+                                                    registerForm.controls['firstName'].dirty &&
+                                                    registerForm.controls['firstName'].touched,
+                                        'is-valid': registerForm.controls['firstName'].valid
+                                    }"
+                                    [ngStyle]="{
+                                        'border-color': isControlValid('firstName') && isControlTouched('firstName')
+                                                      ? '#6356e5'
+                                                      : isControlInvalid('firstName')
+                                                      ? 'red'
+                                                      : ''
+                                    }"
+                                />
+                                <div *ngIf="registerForm.controls['firstName']?.errors?.['required'] && registerForm.controls['firstName'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                    Prénom est requis
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group rounded">
+                                <label for="lastName" class="form-label fs-6 fw-bolder text-dark">Nom</label>
+                                <input
+                                    id="lastNameInput"
+                                    class="form-control"
+                                    type="text"
+                                    name="lastName"
+                                    formControlName="lastName"
+                                    autocomplete="off"
+                                    [ngClass]="{
+                                        'is-invalid': registerForm.controls['lastName'].invalid &&
+                                                    registerForm.controls['lastName'].dirty &&
+                                                    registerForm.controls['lastName'].touched,
+                                        'is-valid': registerForm.controls['lastName'].valid
+                                    }"
+                                    [ngStyle]="{
+                                        'border-color': isControlValid('lastName') && isControlTouched('lastName')
+                                                      ? '#6356e5'
+                                                      : isControlInvalid('lastName')
+                                                      ? 'red'
+                                                      : ''
+                                    }"
+                                />
+                                <div *ngIf="registerForm.controls['lastName']?.errors?.['required'] && registerForm.controls['lastName'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                    Nom est requis
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Password et Confirm Password sur la même ligne -->
+                    <div class="row mb-8">
+                        <div class="col-md-6">
+                            <div class="form-group inner-addon right-addon">
+                                <label for="password" class="form-label fw-bolder text-gray-900 fs-6">Mot de passe</label>
+                                <div class="input-group">
+                                    <input
+                                        #passwd
+                                        class="form-control rounded"
+                                        [type]="showPassword ? 'text' : 'password'"
+                                        placeholder="Mot de passe"
+                                        name="password"
+                                        formControlName="password"
+                                        autocomplete="off"
+                                        [ngClass]="{
+                                            'is-invalid': registerForm.controls['password'].invalid &&
+                                                        registerForm.controls['password'].dirty &&
+                                                        registerForm.controls['password'].touched,
+                                            'is-valid': registerForm.controls['password'].valid
+                                        }"
+                                        [ngStyle]="{
+                                            'border-color': isControlValid('password') && isControlTouched('password')
+                                                          ? '#6666ff'
+                                                          : isControlInvalid('password')
+                                                          ? 'red'
+                                                          : ''
+                                        }"
+                                    />
+                                    <div>
+                                        <i
+                                            alt="show"
+                                            class="far fa-eye eye-show"
+                                            (click)="showPassword = !showPassword"
+                                            [class.hide]="!showPassword"
+                                            style="color: black; font-size: 22px"
+                                        ></i>
+                                        <i
+                                            alt="hide"
+                                            class="far fa-eye-slash eye-hide"
+                                            (click)="showPassword = !showPassword"
+                                            [class.hide]="showPassword"
+                                            style="color: black; font-size: 22px"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <div *ngIf="registerForm.controls['password']?.errors?.['required'] && registerForm.controls['password'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                    Mot de passe est requis
+                                </div>
+                                <app-pattern-verificator
+                                style="font-size: 13px"
+                                [newPassword]="registerForm.controls['password'].value"
+                                [invalidPatternColorAfterCheck]="invalidPatternColorAfterCheck"
+                                (passwordRobustness)="passwordRobustnessHandler($event)"
+                                (validatedPatternsOutput)="onValidatedPatternsOutput($event)"
+                            >
+                            </app-pattern-verificator>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group inner-addon right-addon">
+                                <label for="cpassword" class="form-label fw-bolder text-gray-900 fs-6">Confirmer le mot de passe</label>
+                                <div class="input-group">
+                                    <input
+                                        #cpasswd
+                                        class="form-control rounded"
+                                        [type]="showPassword_V ? 'text' : 'password'"
+                                        placeholder="Confirmer le mot de passe"
+                                        name="cPassword"
+                                        autocomplete="off"
+                                        formControlName="cPassword"
+                                        [ngClass]="{
+                                            'is-invalid': registerForm.controls['cPassword'].invalid &&
+                                                        registerForm.controls['cPassword'].dirty &&
+                                                        registerForm.controls['cPassword'].touched,
+                                            'is-valid': registerForm.controls['cPassword'].valid
+                                        }"
+                                        [ngStyle]="{
+                                            'border-color': isControlValid('cPassword') && isControlTouched('cPassword')
+                                                          ? '#6666ff'
+                                                          : isControlInvalid('cPassword')
+                                                          ? 'red'
+                                                          : ''
+                                        }"
+                                    />
+                                    <div>
+                                        <i
+                                            alt="show"
+                                            class="far fa-eye eye-show"
+                                            (click)="showPassword_V = !showPassword_V"
+                                            [class.hide]="!showPassword_V"
+                                            style="color: black; font-size: 22px"
+                                        ></i>
+                                        <i
+                                            alt="hide"
+                                            class="far fa-eye-slash eye-hide"
+                                            (click)="showPassword_V = !showPassword_V"
+                                            [class.hide]="showPassword_V"
+                                            style="color: black; font-size: 22px"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <div *ngIf="registerForm.controls['cPassword']?.errors?.['required'] && registerForm.controls['cPassword'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                    Confirmer le mot de passe est requis
+                                </div>
+                                <div *ngIf="registerForm.controls['cPassword'].errors && registerForm.controls['cPassword'].touched && registerForm.controls['cPassword'].errors['ConfirmPassword'] " class="form-text text-danger text-warning" style="font-weight: bold">
+                                    'Mot de passe' et 'Confirmation' ne sont pas identiques.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <!-- Gender et Date de Naissance sur la même ligne -->
+                    <div class="row mb-8">
+                        <div class="col-md-6">
+                            <div class="form-group rounded">
+                                <label for="gender" class="form-label fs-6 fw-bolder text-dark">Genre</label>
+                                <select
+                                    id="genderInput"
+                                    class="form-control"
+                                    name="gender"
+                                    formControlName="gender"
+                                    [ngClass]="{
+                                        'is-invalid': registerForm.controls['gender'].invalid &&
+                                                    registerForm.controls['gender'].dirty &&
+                                                    registerForm.controls['gender'].touched,
+                                        'is-valid': registerForm.controls['gender'].valid
+                                    }"
+                                    [ngStyle]="{
+                                        'border-color': isControlValid('gender') && isControlTouched('gender')
+                                                      ? '#6356e5'
+                                                      : isControlInvalid('gender')
+                                                      ? 'red'
+                                                      : ''
+                                    }"
+                                >
+                                    <option value="male">Homme</option>
+                                    <option value="female">Femme</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                                <div *ngIf="registerForm.controls['gender']?.errors?.['required'] && registerForm.controls['gender'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                    Genre est requis
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group rounded">
+                                <label for="dateOfBirth" class="form-label fs-6 fw-bolder text-dark">Date de naissance</label>
+                                <input
+                                    id="dateOfBirthInput"
+                                    class="form-control"
+                                    type="date"
+                                    name="dateOfBirth"
+                                    formControlName="dateOfBirth"
+                                    autocomplete="off"
+                                 
+                                    [ngStyle]="{
+                                        'border-color': isControlValid('dateOfBirth') && isControlTouched('dateOfBirth')
+                                                      ? '#6356e5'
+                                                      : isControlInvalid('dateOfBirth')
+                                                      ? 'red'
+                                                      : ''
+                                    }"
+                                />
+                                <div *ngIf="registerForm.controls['dateOfBirth']?.errors?.['required'] && registerForm.controls['dateOfBirth'].touched" class="form-text text-danger text-warning" style="font-weight: bold">
+                                    Date de naissance est requis
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Bouton Envoyer -->
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="tooltip-custom">
+                            <button
+                                id="submit_button"
+                                [disabled]="registerForm.invalid || loadingButton"
+                                type="submit"
+                                class="btn btn-primary px-5"
+                                style="background: #6356e5; color: white; border-color: #6356e5"
+                            >
+                                <ng-container *ngIf="loadingButton">
+                                    <span class="indicator-progress" [style.display]="'block'">
+                                        Envoyer...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                    </span>
+                                </ng-container>
+                                <ng-container *ngIf="!loadingButton">
+                                    <span class="indicator-label">Envoyer</span>
+                                </ng-container>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            
+                <div class="text-center mt-4">
+                    <span class="fs-6 fw-bolder text-dark">Vous avez déjà un compte</span>
+                    <a routerLink="/auth/login" class="forget-password ml-2">connectez-vous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

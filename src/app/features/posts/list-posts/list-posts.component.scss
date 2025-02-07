@@ -1,0 +1,241 @@
+.content {
+    background-color: #e6e6e6;
+    padding: 1rem;
+    transition: 0.4s;
+    height: 41.7rem;
+  }/* Conteneur principal */
+  .sub_content{
+    max-height: 40rem;
+    overflow-y: auto;
+  }
+.tweet-post-container {
+    border: 1px solid #e1e8ed;
+    border-radius: 16px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+   
+
+    margin: 0 auto;
+
+  }
+  
+  /* En-tête du tweet (avatar + textarea) */
+  .tweet-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  /* Image de profil */
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Zone de texte */
+  textarea {
+    flex: 1;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 8px;
+    outline: none;
+    min-height: 100px;
+  }
+  
+  textarea::placeholder {
+    color: #657786;
+  }
+  
+  /* Pied de page (compteur de caractères + bouton) */
+  .tweet-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+  
+  /* Compteur de caractères */
+  .char-count {
+    font-size: 14px;
+    color: #657786;
+  }
+  
+  .char-count.warning {
+    color: #ffad1f;
+  }
+  
+  .char-count.error {
+    color: #e0245e;
+  }
+  
+  /* Bouton Tweeter */
+  button {
+    background-color: #6356e5;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:disabled {
+    background-color: #8c82ec;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #6356e5;
+  }
+
+
+  /* Conteneur principal */
+.post-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Post individuel */
+  .post {
+    border: 1px solid #e1e8ed;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* En-tête du post */
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .timestamp {
+    font-size: 12px;
+    color: #657786;
+  }
+  
+  /* Contenu du post */
+  .post-content {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+  }
+  
+  /* Actions du post */
+  .post-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .post-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #657786;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .post-actions button:hover {
+    color: #1da1f2;
+  }
+  
+  .post-actions button i {
+    font-size: 16px;
+  }
+  
+  /* Section des commentaires */
+  .comments-section {
+    margin-top: 12px;
+  }
+  
+  .comment {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .comment-profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .comment-content {
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .comment-content strong {
+    color: #1da1f2;
+  }
+  
+  .add-comment input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e1e8ed;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    color: #000;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .add-comment input:focus {
+    border-color: #1da1f2;
+  }
+  ::-webkit-scrollbar-track {
+    padding: 2px 0;
+    background-color: rgba(49, 53, 139, 0.148);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: #8c82ec;
+  }

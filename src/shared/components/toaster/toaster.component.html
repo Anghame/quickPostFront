@@ -1,0 +1,49 @@
+<div
+  class="toast-container"
+  *ngIf="!isHidden"
+  [ngClass]="{ 'fade-in': fadeInAnimation, 'fade-out': fadeOutAnimation }"
+>
+  <div class="toast-content">
+    <div 
+      class="toast-icon"
+      [ngClass]="{
+        'toast-success': toastType === 'success',
+        'toast-error': toastType === 'error',
+        'toast-warning': toastType === 'warning'
+      }"
+    ></div>
+    <div class="toast-message">
+      <strong
+        [ngClass]="{
+          'toast-success-text': toastType === 'success',
+          'toast-error-text': toastType === 'error',
+          'toast-warning-text': toastType === 'warning',
+        }"
+      >
+      <ng-container *ngIf="toastType as type">
+        <strong class="toast-title" [ngClass]="'toast-' + type + '-text'">
+          <ng-container *ngIf="type === 'success'">
+            Succès
+          </ng-container>
+          <ng-container *ngIf="type === 'error'">
+           Erreur
+          </ng-container>
+          <ng-container *ngIf="type === 'warning'">
+            Avertissement
+          </ng-container>
+        </strong>
+      </ng-container>
+    </strong>
+      <p>{{ toastMessage }}</p>
+    </div>
+  </div>
+  <div
+    class="progress-bar"
+    [ngClass]="{
+      'toast-success-background': toastType === 'success',
+      'toast-error-background': toastType === 'error',
+      'toast-warning-background': toastType === 'warning'
+    }"
+    [style.width.%]="progressPercentage"
+  ></div>
+</div>

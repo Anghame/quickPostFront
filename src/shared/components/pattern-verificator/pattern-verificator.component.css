@@ -1,0 +1,58 @@
+.pattern-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Ajoutez ici les styles spécifiques pour .pattern-container */
+}
+
+.pattern-verificator {
+    display: flex;
+    flex-direction: column;
+    /* Ajoutez ici les styles spécifiques pour .pattern-verificator */
+}
+
+.pattern-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Ajoutez ici les styles spécifiques pour .pattern-description */
+}
+
+.pattern-description.pattern-valid {
+    color: #50cd89;  /* Exemple: couleur verte pour valide */
+}
+
+.pattern-description.error {
+    color: #f1416c;  /* Exemple: couleur rouge pour invalide */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-3px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(3px);
+    }
+}
+
+.pattern-description.pattern-invalid {
+    animation: applyStyle 3s, shake 0.5s;
+    animation-iteration-count: 1;
+    color: #f1416c;
+    font-weight: 600;
+}
+
+.pattern-description i {
+    margin-left: 10px;
+}
+
+.fa-check {
+    color: #50cd89;
+}
+
+.fa-times {
+    color: #f1416c;
+}

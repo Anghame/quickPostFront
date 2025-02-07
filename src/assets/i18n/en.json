@@ -1,0 +1,141 @@
+{
+  "AUTH": {
+    "ROBOT": "I'm not a robot",
+    "DES": {
+      "TXT": "Protecting your students in cyberspace",
+      "TXT1": "is our top priority !"
+    },
+    "FORGOT": {
+      "TITLE": "Forgotten Password?",
+      "DESC": "Enter your Email to reset your password",
+      "BUTTONS": {
+        "SUBMIT": "Submit",
+        "CANCEL": "Cancel"
+      }
+    },
+    "LOGIN": {
+      "WELCOME_MESSAGE": "Welcome to ",
+      "BUTTON": "Login",
+      "EMAIL": "Login with Email",
+      "OR": "OR",
+      "ERROR": "Your login credentials are incorrect, please try again!",
+      "ERRORCHANGE": "Sorry, it looks like errors were found, please try again."
+    },
+    "REACTIVE": {
+      "ERR": "Your token has expired",
+      "VERIF": "verify your Email address?",
+      "INPUT": "Enter your Email address to verify your account"
+    },
+    "VALIDATORS": {
+      "EMAIL_REQ": "Email address is required",
+      "MIN_LENGTH": "Minimum length is two characters",
+      "MAX_LENGTH": "Maximum length is twenty characters",
+      "INVALID_EMAIL_MESSAGE": "Email address must be a valid address",
+      "PASSWORD_REQ": "Password is required",
+      "PASSWORD_VAL": "Password must be between eight and sixty-eight characters",
+      "RECAPTCHA": "Please complete the reCAPTCHA.",
+      "PASSWORD_MATCH": "'Password' and 'Confirmation' do not match.",
+      "inputInvalid": "Champ invalide.",
+      "VERY_WEEK": "Very weak Password",
+      "WEEK": "Weak Password",
+      "MEDIUM": "Medium Password",
+      "STRONG": "Strong Password",
+      "VERY_STRONG": "Very strong Password",
+      "LASTNAME": {
+        "HELPER": "Last Name must be between 2-10 characters long",
+        "REQUIRED": "Last Name is required",
+        "INVALID": "Last Name is invalide"
+      },
+      "CONFIRMPASSWORD": {
+        "PWD_CONFIRMATIO_INVALID": "'Passsword' and 'Confirm Password' didn't match.",
+        "PWD_CONFIRMATIO_VALID": "Password confirmation is valid"
+      }
+    },
+    "INPUTS": {
+      "EMAIL": "Email Address Or Username",
+      "PASSWORD": "Password",
+      "FORGET": "Forgot Password?",
+      "CPASSWORD": "Confirm Password",
+      "USERNAME": "Username",
+      "AGREEMENT": "I Agree to the conditions"
+    },
+    "REGISTER": {
+      "TITLE": "Sign Up",
+      "DESC": "Enter your details to create your account",
+      "SUCCESS": "Your account has been successfuly registered.",
+      "EMAIL": "Register with Email "
+    },
+    "GENERAL": {
+      "COMPT": "Already have an account ?",
+      "CON": "Login",
+      "CREATE_COMPT": "Create an account",
+      "BACK_TO_LOGIN": "Back to login"
+    },
+    "RESET": {
+      "TITLE": "Reset your password",
+      "DESC": "Please enter a new password",
+      "SUCCESS": "Your password has been successfully changed."
+    },
+    "OTP_SCREEN": {
+      "VERIFY_YOUR_EMAIL": "VERIFY YOUR EMAIL",
+      "YOU_ARE_ALMOST_THERE": "You're almost there !",
+      "VERIFICATION_CODE_SENT": "A 6-digit verification code has been sent to",
+      "CHECK_SPAM": "If you don't see it, you may need to check your spam folder.",
+      "ENTER_CODE": "Please enter it below to continue.",
+      "DIDNT_RECEIVE_CODE": "Didn't receive the code?",
+      "RESEND": "Resend",
+      "WRONG_CODE": "The code you entered is incorrect. Please try again.",
+      "RESEND_ERROR": "An error occurred while resending the verification code. Please try again later!",
+      "CONFIRM": "Confirm"
+    }
+  },
+  "REGISTERVERIF": {
+    "COPY": "Powered by ",
+    "DATAFORETHIC": " DATAFORETHIC ",
+    "CGULINK": " | Terms and Conditions",
+    "INDICATEURS_RISQUES": "Risk Indicators",
+    "FORECAST": "Forecast",
+    "CLIMATE": "Overall School Climate",
+    "TEXT1": "A verification Email has been sent to your address ",
+    "TEXT2": "Check your inbox to validate and complete the process",
+    "TEXT3": "Log in",
+    "TEXT4": "Back to Login",
+    "TEXT5": "Email Validation!",
+    "EMAILVERIF": "Email verification",
+    "VERIFEMAIL": "User Email is verified",
+    "REACTIVATE": "Réactivate my account"
+  },
+  "SERVER": {
+    "INTERNAL_ERROR_OPS": "Oops... Something went wrong.",
+    "NO_DATA": "There is no data to display during the selected time frame.",
+    "lOADING": "Loading",
+    "NO_DATA_WITHOUT_PERIOD": "There is no data to show."
+  },
+  "DROPDOWN": {
+    "NOTMATCH": " No Matched please try again ",
+    "LISTVIDE": "the list is empty"
+  }
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

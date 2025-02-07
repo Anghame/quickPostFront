@@ -1,0 +1,189 @@
+:host {
+    height: 100%;
+    width: 100%;
+}
+
+.copyright {
+    position: relative;
+    top: 10%;
+    font-size: 0.9rem !important;
+}
+
+.bg {
+    background-color: #6356e5;
+    border-bottom-right-radius: 160px;
+    background-size: cover;
+}
+
+@media screen and (max-width: 991.5px) {
+    .copyright {
+        top: -3%;
+    }
+    .bg {
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-right-radius: 0px;
+    }
+}
+
+.page {
+    margin: 5%;
+}
+
+@media screen and (min-width: 991.5px) {
+    .page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+    }
+}
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 275px;
+    margin-bottom: 2%;
+}
+
+@media (max-width: 991.5px) {
+    .logo {
+        width: 20%;
+    }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    width: 100%;
+    height: 100vh;
+}
+
+.custom-heading {
+    color: white;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.custom-div {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 991.5px) {
+    .custom-div {
+        font-size: 100%;
+    }
+    .custom-heading {
+        font-size: 100%;
+    }
+}
+
+.login-container {
+    text-align: center;
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.welcome-text {
+    font-size: 30px;
+    color: aliceblue;
+    margin-bottom: auto;
+}
+
+.subtitle {
+    text-align-last: start;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: aliceblue;
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.btn-login {
+    background-color: #e7eeec;
+    color: #2170b0;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contentLogin {
+    margin-top: 20%;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+input {
+    background-color: #ffffff;
+}
+
+.hide {
+    display: none;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .far,
+.inner-addon .fas {
+    position: absolute;
+    padding: 10px 30px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.right-addon .far,
+.right-addon .fas {
+    right: 0px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.px-25 {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.link-primary {
+    color: #ffffff !important;
+}
+
+.borderWhite {
+    border: 1px solid #ffffff !important;
+}
+
+.forget-password {
+    color: #6666ff;
+}
+
+.fotop {
+    margin-top: 5% !important;
+    width: 100%;
+}

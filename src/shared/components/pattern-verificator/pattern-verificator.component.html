@@ -1,0 +1,70 @@
+<div class="pattern-container" *ngIf="!!inputNewPassword?.length">
+
+    <p>
+        Créez un mot de passe qui contient :
+    </p>
+    <div class="pattern-verificator">
+      <div
+        class="pattern-description"
+        [ngClass]="{
+          'pattern-valid': hasMinLength,
+          'pattern-invalid': !hasMinLength && invalidPatternColorAfterCheck,
+          error: !hasMinLength && !invalidPatternColorAfterCheck
+        }"
+      >
+      contient au moins 8 caractéres
+        <i
+          class="fas"
+          [ngClass]="{ 'fa-check': hasMinLength, 'fa-times': !hasMinLength }"
+        ></i>
+      </div>
+  
+      <div
+        class="pattern-description"
+        [ngClass]="{
+          'pattern-valid': hasLowercase,
+          'pattern-invalid': !hasLowercase && invalidPatternColorAfterCheck,
+          error: !hasLowercase && !invalidPatternColorAfterCheck
+        }"
+      >
+      contient des lettres minuscules (a-z)
+        <i
+          class="fas"
+          [ngClass]="{ 'fa-check': hasLowercase, 'fa-times': !hasLowercase }"
+        ></i>
+      </div>
+      <div
+        class="pattern-description"
+        [ngClass]="{
+          'pattern-valid': hasUppercase,
+          'pattern-invalid': !hasUppercase && invalidPatternColorAfterCheck,
+          error: !hasUppercase && !invalidPatternColorAfterCheck
+        }"
+      >
+      contient des lettres majuscules (A-Z)
+        <i
+          class="fas"
+          [ngClass]="{ 'fa-check': hasUppercase, 'fa-times': !hasUppercase }"
+        ></i>
+      </div>
+      <div
+        class="pattern-description"
+        [ngClass]="{
+          'pattern-valid': hasDigitOrSymbol,
+          'pattern-invalid': !hasDigitOrSymbol && invalidPatternColorAfterCheck,
+          error: !hasDigitOrSymbol && !invalidPatternColorAfterCheck
+        }"
+      >
+      contient au moins un chiffre (0-9) ou un symbole
+        <i
+          class="fas"
+          [ngClass]="{
+            'fa-check': hasDigitOrSymbol,
+            'fa-times': !hasDigitOrSymbol
+          }"
+        ></i>
+      </div>
+     
+    </div>
+  </div>
+  
